@@ -70,3 +70,34 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) { .route-card { animation:none; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; transition-duration:.01ms !important; } }
 @media (max-width: 640px) { .nav-link-active::after { bottom:-10px; } .map-panel { min-height:430px; } .map-marker { width:34px; height:34px; } }
+
+/* Dark mode accessibility layer: preserve Signal Moss and status semantics while increasing contrast. */
+.theme-toggle { display:inline-flex; align-items:center; gap:7px; border:1px solid #D9DED4; border-radius:999px; padding:5px 8px 5px 5px; color:#526159; background:rgba(255,255,255,.38); transition:background .18s ease, color .18s ease, transform .16s cubic-bezier(.23,1,.32,1); }
+.theme-toggle:hover { background:#DCEBDD; color:#2E6B4E; }
+.theme-toggle-track { display:block; width:25px; height:16px; border-radius:999px; background:#C9D2C6; padding:2px; transition:background .18s ease; }
+.theme-toggle-thumb { display:grid; place-items:center; height:12px; width:12px; border-radius:50%; background:#F8F4E9; color:#2E6B4E; transform:translateX(0); transition:transform .2s cubic-bezier(.23,1,.32,1), background .18s ease; }
+.theme-dark .theme-toggle { border-color:#385247; background:#1C3329; color:#D9E9D8; }
+.theme-dark .theme-toggle-track { background:#2E6B4E; }
+.theme-dark .theme-toggle-thumb { transform:translateX(9px); background:#F4E4B6; color:#7E5A13; }
+.theme-dark, .theme-dark body { background:#0E1D18 !important; color:#E8EFE7 !important; }
+.theme-dark header, .theme-dark footer, .theme-dark [class*="bg-[#F8F4E9]"], .theme-dark [class*="bg-[#EFEADD]"] { background-color:#132820 !important; color:#E8EFE7 !important; border-color:#2D473B !important; }
+.theme-dark [class*="bg-white/50"], .theme-dark .soft-card, .theme-dark .route-card, .theme-dark [class*="bg-[#FCFAF3]"] { background-color:#182F25 !important; border-color:#345143 !important; color:#E8EFE7 !important; }
+.theme-dark [class*="bg-[#F3EFE3]"] { background-color:#20372C !important; color:#E8EFE7 !important; }
+.theme-dark [class*="text-[#142B27]"], .theme-dark [class*="text-[#263D32]"], .theme-dark h1, .theme-dark h2, .theme-dark h3 { color:#E8EFE7 !important; }
+.theme-dark [class*="text-[#526159]"], .theme-dark [class*="text-[#657269]"], .theme-dark [class*="text-[#68756C]"], .theme-dark [class*="text-[#69756C]"], .theme-dark [class*="text-[#5D6A62"] { color:#B8C8BC !important; }
+.theme-dark [class*="text-[#6A756D]"], .theme-dark [class*="text-[#77847A]"], .theme-dark [class*="text-[#7C877E]"], .theme-dark [class*="text-[#889188]"] { color:#91A69A !important; }
+.theme-dark .nav-link { color:#B8C8BC; } .theme-dark .nav-link:hover, .theme-dark .nav-link-active { color:#8DCE9B; }
+.theme-dark .nav-link-active::after { background:#8DCE9B; }
+.theme-dark .form-control { background:#10221A !important; border-color:#466252; color:#EDF5EC; }
+.theme-dark .form-control::placeholder { color:#8EA294; }
+.theme-dark .bin-row { border-color:#345143; } .theme-dark .bin-row:hover, .theme-dark .bin-row-selected { background:#223A2E; }
+.theme-dark .reference-link, .theme-dark .soft-card, .theme-dark .route-card { border-color:#345143; }
+.theme-dark .reference-link b { color:#DCEADF; }
+.theme-dark .button-secondary, .theme-dark .filter-chip, .theme-dark .icon-button { border-color:#476252; color:#D2E4D3; background:#162D24; }
+.theme-dark .button-secondary:hover, .theme-dark .filter-active { background:#2E6B4E; color:#F8F4E9; }
+.theme-dark .field-trace { background:linear-gradient(90deg,#4A6254 0%,#6BAF7D 68%,transparent 100%); }
+.theme-dark .metric-card { border-color:#6BAF7D; }
+.theme-dark .map-panel { box-shadow:0 14px 34px rgba(0,0,0,.24); }
+.theme-dark .map-panel::before { background:rgba(14,29,24,.86); border-color:#54705D; color:#DCEADF; }
+.theme-dark .map-panel .bg-\[\#F8F4E9\]\/90 { background-color:rgba(19,40,32,.92) !important; color:#E8EFE7; }
+@media (max-width: 640px) { .theme-toggle { padding-right:5px; } }
